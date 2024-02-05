@@ -1,8 +1,7 @@
-def find_char_position(char, alphabet):
-    return alphabet.index(char)
-
 Alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZºª?¿¡!|@·#$~%&¬/()=^’*`+¨´ç,.-[]{};:_ qwertyuiopasdfghjklzxcvbnmáéíóúÁÉÍÓÚÑñ'
 alfabeto2 = 'mnbvcxzlkjhgfdsapoiuytrewq _:;}{][-.,ç´¨+`*^=)(/¬&%~$#·@|!’¡¿?ªºZYXWVUTSRQPONMLKJIHGFEDCBA9876543210úóíéáÚÓÍÉÁÑñ'
+def find_char_position(char, alphabet):
+    return alphabet.index(char)
 
 def crypSec(text):
     try:
@@ -10,19 +9,6 @@ def crypSec(text):
         Ftext = []
         for i in range(len(text)):
             Ftext.append(alfabeto2[find_char_position(text[i], Alphabet)])
-        return ''.join(Ftext)
-
-    except:
-        print("error")
-        return 1
-
-def DecrypSec(text):
-    try:
-
-        Ftext = []
-        alfabeto2 = Alphabet
-        for i in range(len(text)):
-            Ftext.append(alfabeto2[find_char_position(text[i], alfabeto2)])
         return ''.join(Ftext)
 
     except:
