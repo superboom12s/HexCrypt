@@ -1,39 +1,20 @@
-#I dont know how does this two first functions work, i copy pasted them from stackoverflow
-def base36encode(number, alphabet='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'):
-    if not isinstance(number, int):
-        raise TypeError('number must be an integer')
-    base36 = ''
-    sign = ''
-    if number < 0:
-        sign = '-'
-        number = -number
-    if 0 <= number < len(alphabet):
-        return sign + alphabet[number]
-    while number != 0:
-        number, i = divmod(number, len(alphabet))
-        base36 = alphabet[i] + base36
-    return sign + base36
-def base36decode(number):
-    return int(number, 36)
-
-#Here starts my code
 def find_char_position(char, alphabet):
     return alphabet.index(char)
 
 Alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZºª?¿¡!|@·#$~%&¬/()=^’*`+¨´ç,.-[]{};:_ qwertyuiopasdfghjklzxcvbnmáéíóúÁÉÍÓÚÑñ'
+alfabeto2 = 'mnbvcxzlkjhgfdsapoiuytrewq _:;}{][-.,ç´¨+`*^=)(/¬&%~$#·@|!’¡¿?ªºZYXWVUTSRQPONMLKJIHGFEDCBA9876543210úóíéáÚÓÍÉÁÑñ'
 
 def crypSec(text):
     try:
 
         Ftext = []
-        alfabeto2 = 'Émnbvcxzélkjhgfdsapoáiuytrewq _:;}{]Á[-.,ç´¨+`*^=)(í/¬&%~$#·@|!¡¿?ªºZYXWÓVUTóSRQPONMLKJIHGFEDÍCBA98ú7654321Ú0Ññ’'
         for i in range(len(text)):
             Ftext.append(alfabeto2[find_char_position(text[i], Alphabet)])
         return ''.join(Ftext)
 
     except:
         print("error")
-        return 0
+        return 1
 
 def DecrypSec(text):
     try:
@@ -41,9 +22,9 @@ def DecrypSec(text):
         Ftext = []
         alfabeto2 = Alphabet
         for i in range(len(text)):
-            Ftext.append(alfabeto2[find_char_position(text[i], 'Émnbvcxzélkjhgfdsapoáiuytrewq _:;}{]Á[-.,ç´¨+`*^=)(í/¬&%~$#·@|!¡¿?ªºZYXWÓVUTóSRQPONMLKJIHGFEDÍCBA98ú7654321Ú0Ññ’')])
+            Ftext.append(alfabeto2[find_char_position(text[i], alfabeto2)])
         return ''.join(Ftext)
 
     except:
         print("error")
-        return 0
+        return 1
