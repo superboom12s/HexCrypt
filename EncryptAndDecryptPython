@@ -1,5 +1,5 @@
-Alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZºª?¿¡!|@·#$~%&¬/()=^’*`+¨´ç,.-[]{};:_ qwertyuiopasdfghjklzxcvbnmáéíóúÁÉÍÓÚÑñ'
-alfabeto2 = 'mnbvcxzlkjhgfdsapoiuytrewq _:;}{][-.,ç´¨+`*^=)(/¬&%~$#·@|!’¡¿?ªºZYXWVUTSRQPONMLKJIHGFEDCBA9876543210úóíéáÚÓÍÉÁÑñ'
+alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZºª?¿¡!|@·#$~%&¬/()=^’*`+¨´ç,.-[]{};:_ qwertyuiopasdfghjklzxcvbnmáéíóúÁÉÍÓÚÑñ'
+alphabet2 = 'mnbvcxzlkjhgfdsapoiuytrewq _:;}{][-.,ç´¨+`*^=)(/¬&%~$#·@|!’¡¿?ªºZYXWVUTSRQPONMLKJIHGFEDCBA9876543210úóíéáÚÓÍÉÁÑñ'
 def find_char_position(char, alphabet):
     return alphabet.index(char)
 
@@ -7,7 +7,7 @@ def crypSec(text):
     try:
         Ftext = []
         for symbol in range(len(text)):
-            Ftext.append(alfabeto2[find_char_position(text[symbol], Alphabet)])
+            Ftext.append(alphabet2[find_char_position(text[symbol], alphabet)])
         return ''.join(Ftext)
 
     except:
