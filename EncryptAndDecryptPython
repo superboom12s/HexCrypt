@@ -5,10 +5,9 @@ def find_char_position(char, alphabet):
 
 def crypSec(text):
     try:
-
         Ftext = []
-        for i in range(len(text)):
-            Ftext.append(alfabeto2[find_char_position(text[i], Alphabet)])
+        for symbol in range(len(text)):
+            Ftext.append(alfabeto2[find_char_position(text[symbol], Alphabet)])
         return ''.join(Ftext)
 
     except:
