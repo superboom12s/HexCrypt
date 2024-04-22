@@ -6,7 +6,7 @@ alphabet2 = 'mnbvcxzlkjhgfdsapoiuytrewq _:;}{][-.,ç´¨+`*^=)(/¬&%~$#·@|!’�
 def crypSec(text):
 
     def find_char_position(char, alphabet):
-    return alphabet.index(char)
+        return alphabet.index(char)
 
     try:
         Ftext = []
