@@ -1,9 +1,13 @@
 alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZºª?¿¡!|@·#$~%&¬/()=^’*`+¨´ç,.-[]{};:_ qwertyuiopasdfghjklzxcvbnmáéíóúÁÉÍÓÚÑñ'
 alphabet2 = 'mnbvcxzlkjhgfdsapoiuytrewq _:;}{][-.,ç´¨+`*^=)(/¬&%~$#·@|!’¡¿?ªºZYXWVUTSRQPONMLKJIHGFEDCBA9876543210úóíéáÚÓÍÉÁÑñ'
-def find_char_position(char, alphabet):
-    return alphabet.index(char)
+
+
 
 def crypSec(text):
+
+    def find_char_position(char, alphabet):
+    return alphabet.index(char)
+
     try:
         Ftext = []
         for symbol in range(len(text)):
