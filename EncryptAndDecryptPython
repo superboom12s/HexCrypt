@@ -56,7 +56,6 @@ def encryp(text):
 
     return ''.join(preProc)
 
-frase = "Sabes que hay personas que toleran mejor el dolor, ¿verdad? Hay quienes se hacen un tatuaje y salen diciendo que no sintieron nada y hay quienes parece que les estén torturando. El caso es que, aunque el primero no sufra, el daño lo hace igual; Los dos se han perforado la piel, sangran un poco y si no se lo cuidan correctamente se les puede infectar,que no hayan sentido el proceso no significa que no hayan sufrido daños. Del mismo modo pasa con los que están más acostumbrados a estar solos; aunque pueden estar mucho más tiempo en aislamiento sin sentirse mal... Se están dañando igual, solo que superficialmente no lo notan, como el que no siente la aguja."
 def decryp(text):
 
     postProc = splitOnTwo(text)
