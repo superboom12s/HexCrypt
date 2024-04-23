@@ -1,19 +1,83 @@
-alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZºª?¿¡!|@·#$~%&¬/()=^’*`+¨´ç,.-[]{};:_ qwertyuiopasdfghjklzxcvbnmáéíóúÁÉÍÓÚÑñ'
-alphabet2 = 'mnbvcxzlkjhgfdsapoiuytrewq _:;}{][-.,ç´¨+`*^=)(/¬&%~$#·@|!’¡¿?ªºZYXWVUTSRQPONMLKJIHGFEDCBA9876543210úóíéáÚÓÍÉÁÑñ'
+from random import *
+
+alphabet = 'öööööööööööööööö0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZºª?¿¡!|@·#$~%&¬/()=^’*`+¨´ç,.-[]{};:_ qwertyuiopasdfghjklzxcvbnmáéíóúÁÉÍÓÚÑñ'
+            #16
+
+def findCharPosition(char):
+    return alphabet.index(char)
+
+def splitOnTwo(texto):
+    #divide la entrada en una lista de tres en tres caracteres
+    resultado = [texto[i:i + 2] for i in range(0, len(texto), 2)]
+    return resultado
+
+import math
+
+def originalLenght(longitud_procesada):
+    a = 1
+    b = 1
+    c = -2 * longitud_procesada
+    discriminante = b**2 - 4*a*c
+    if discriminante >= 0:
+        sol1 = (-b + math.sqrt(discriminante)) / (2 * a)
+        sol2 = (-b - math.sqrt(discriminante)) / (2 * a)
+        return int(max(sol1, sol2))
 
 
+def addMet(text):
+    preProc2 = []
+    #encuentra el caracter en el alfabeto y pasa su
+    #posicion a hexadecimal
+    preProc2 = hex(text)
+    # separa el valor anterior en una lista de 4 elementos
+    preProc2 = [*preProc2]
+    # elimina los dos primeros elementos
+    preProc2.pop(0)
+    preProc2.pop(0)
+    return ''.join(preProc2)
 
-def crypSec(text):
+def encryp(text):
 
-    def find_char_position(char, alphabet):
-        return alphabet.index(char)
+    preProc = []
 
-    try:
-        Ftext = []
-        for symbol in range(len(text)):
-            Ftext.append(alphabet2[find_char_position(text[symbol], alphabet)])
-        return ''.join(Ftext)
+    for symbol in range(len(text)):
+        preProc.append(addMet(findCharPosition(text[symbol])))
 
-    except:
-        print("error")
-        return 1
+    addrange = sorted(range(len(text)+1), reverse=True)
+    iterVar = 1
+
+    for i in range(len(text)):
+
+        for j in range(addrange[i]):
+                       #
+            preProc.insert(iterVar, addMet(randint(29, 141)))
+            iterVar += 1
+        iterVar += 1
+
+    return ''.join(preProc)
+
+frase = "Sabes que hay personas que toleran mejor el dolor, ¿verdad? Hay quienes se hacen un tatuaje y salen diciendo que no sintieron nada y hay quienes parece que les estén torturando. El caso es que, aunque el primero no sufra, el daño lo hace igual; Los dos se han perforado la piel, sangran un poco y si no se lo cuidan correctamente se les puede infectar,que no hayan sentido el proceso no significa que no hayan sufrido daños. Del mismo modo pasa con los que están más acostumbrados a estar solos; aunque pueden estar mucho más tiempo en aislamiento sin sentirse mal... Se están dañando igual, solo que superficialmente no lo notan, como el que no siente la aguja."
+def decryp(text):
+
+    postProc = splitOnTwo(text)
+
+    addrange = sorted(range(originalLenght(len(postProc)) + 1), reverse=True)
+    iterVar = 1
+
+    for i in range(originalLenght(len(splitOnTwo(text)))):
+
+        for j in range(addrange[i]):
+            try:
+                postProc.pop(iterVar)
+            except:
+                break
+
+        iterVar += 1
+
+    for i in range(len(postProc)):
+        try:
+            postProc[i] = alphabet[int(postProc[i], 16)]
+        except:
+            break
+
+    return ''.join(postProc)
