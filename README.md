@@ -8,8 +8,8 @@ For example, lets say that i want to encrypt _**"Hexade"**_, my GitHub name, it 
 
 Cool! So how can i encrypt/decrypt it?
 
-- encryp( text ) will return the **encrypted text** when **normal text is introduced.**
-- decrypt( encrypted text) will return the **original text** when an **encrypted text is introduced.**
+- `encryp( text )` will return the **encrypted text** when **normal text is introduced.**
+- `decrypt( encrypted text)` will return the **original text** when an **encrypted text is introduced.**
 
   
 > [!NOTE]
