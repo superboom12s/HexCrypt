@@ -1,4 +1,4 @@
-# HexCrypt 2.0.1
+# HexCrypt 2.0.2
 ### This is an encryption and decryption library in python.
 
 
