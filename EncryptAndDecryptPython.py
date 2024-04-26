@@ -1,4 +1,4 @@
-from random import *
+import random, math
 
 alphabet = 'öööööööööööööööö0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZºª?¿¡!|@·#$~%&¬/()=^’*`+¨´ç,.-[]{};:_ qwertyuiopasdfghjklzxcvbnmáéíóúÁÉÍÓÚÑñ'
             #16
@@ -11,12 +11,10 @@ def splitOnTwo(texto):
     resultado = [texto[i:i + 2] for i in range(0, len(texto), 2)]
     return resultado
 
-import math
-
-def originalLenght(longitud_procesada):
+def originalLenght(longitudProcesada):
     a = 1
     b = 1
-    c = -2 * longitud_procesada
+    c = -2 * longitudProcesada
     discriminante = b**2 - 4*a*c
     if discriminante >= 0:
         sol1 = (-b + math.sqrt(discriminante)) / (2 * a)
@@ -50,7 +48,7 @@ def encryp(text):
 
         for j in range(addrange[i]):
                        #
-            preProc.insert(iterVar, addMet(randint(29, 141)))
+            preProc.insert(iterVar, addMet(random.randint(29, 141)))
             iterVar += 1
         iterVar += 1
 
