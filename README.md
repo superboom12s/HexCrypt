@@ -1,4 +1,4 @@
-# HexCrypt 2.0.2
+# HexCrypt
 ### This is an encryption and decryption library in python.
 
 
@@ -16,9 +16,9 @@ Cool! So how can i encrypt/decrypt it?
 > Both funtions work with string values as input and output.
 
 > [!WARNING]
-> Too big texts can cause extreme lag or giant outputs.
+> Masive inputs can cause extreme lag or giant outputs.
 
 > [!CAUTION]
-> Using this tool wont work with some characters of some languages, symbols like "ö" or emojis will crash the program.
+> Using this tool won't work with some characters of some languages, symbols like "ö" or emojis will crash the program.
 
 
